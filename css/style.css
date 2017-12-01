@@ -1,0 +1,505 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.text-upp{
+  text-transform: uppercase;
+}
+
+hr.estrella-blanca{
+  max-width: 500px;
+  height: 2px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid 5px;
+  text-align: center;
+  border-color:white;
+  background-color: white;
+  overflow: visible;
+}
+
+hr.estrella-blanca:after{
+  box-sizing: border-box;
+  font-family: 'FontAwesome';
+  content: "\f182";
+  padding:20px;
+  bottom: 40px;
+  color: white;
+  background-color: #DC143C;
+  display: inline-block;
+  position: relative;
+  font-size: 50px;
+}
+
+/*header*/
+.cabecera{
+
+  width: 100%;
+  height: 80px;
+  background: transparent;
+  font-weight: 900;
+  display: table;
+  overflow: hidden; /*aplico esto, para que se recorte, pero mi contenido se mantenga visible*/
+  position: fixed; /*le doy una posición fija a mi cabecera*/
+  z-index: 1000;
+}
+
+.fecha{
+  padding: 15px;
+  font-size: 40px;
+}
+/*
+Aplico al div, que engloba todo el contenido del header
+*/
+.contenedor:before, .contenedor:after{
+  display: table; /*definimos un cuadro a nivel del bloque*/
+  content: "";
+}
+
+/*Fijamos los bloques que deseamos se mantengan dentro de ellos,
+para que al aplicar position no salgan de ahí
+*/
+.fijando-cajas:before, .fijando-cajas:after{
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.contenedor{
+  margin: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: table;
+  height: 80px;
+  width: 100%;
+  background-image: url("../assets/images/fondo2.jpg");
+
+}
+
+.cabecera .logo-palabra{
+  color: 	rgba(169,3,41,1);
+  text-decoration: none;
+  font-size: 70px;
+  font-weight: 900;
+  overflow: hidden;
+  line-height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cabecera .barra-menu{
+  float: right;
+  font-size: 14px;
+}
+
+.cabecera .barra-menu ul{
+  position: relative;
+  list-style: none;
+}
+
+.cabecera .barra-menu ul li{
+  float: left;
+  display: table;
+  height: 80px;
+  margin: 10px;
+}
+
+.cabecera .barra-menu ul li a{
+  color: rgba(169,3,41,1);
+  font-weight: 900;
+  font-size: 30px;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cabecera .barra-menu ul li a:hover{
+  color: 	#228B22;
+  font-weight: 900;
+}
+
+
+/*main*/
+.cuerpo{
+  width: 100%;
+  height: 100%;
+}
+
+.parte-1{
+  width: 100%;
+  padding-top: 120px; /*le aplico un padding, para bajar el contenido, ya que al hacer estatic la cabecera, este se mueve hacia arriba*/
+  padding-bottom: 100px;
+  background-color:  #DC143C;
+  text-align: center;
+  color: #495705;
+}
+
+.contenido-1 h2{
+  font-size: 70px;
+  font-weight: 500;
+  color: #333300;
+}
+
+marquee{
+  font-size: 50px;
+  font-weight: 900;
+  padding: 20px;
+  color: #333300;
+}
+
+.imagen-central{
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+/*click*/
+.imagenes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.imagen-click a{
+  position: relative;
+  display: block;
+  max-width: 500px;
+
+}
+
+.imagen-click a img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 10px;
+  position: static;
+}
+
+.imagen-lupa{
+  display: table;
+  height: 300px;
+  position: absolute;
+}
+
+.imagen-lupa:hover{
+  color: white;
+  position: absolute;
+  background-color: #993300;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: table;
+  opacity: 0.8;
+  margin: 10px;
+}
+
+.icono-lupa{
+  position: relative;
+  width: 300px;
+  display: table-cell;
+  vertical-align: middle;
+  z-index: -1000;
+}
+
+.pantalla-click{
+  display: none;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.pantalla-click:target {
+	display: block;
+	position: fixed;
+	background-image: url("../assets/images/fondo.jpg");
+	top: 0;
+	left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+
+}
+
+.pantalla-click h1{
+  padding-top: 60px;
+  font-size: 90px;
+  font-weight: 500;
+  color: #9D6D3D;
+}
+
+.pantalla-click div div{
+  display: inline-block;
+  padding: 15px;
+}
+
+.pantalla-click div img{
+  width: 450px;
+  height: 450px;
+  border-radius: 30%;
+}
+
+.pantalla-click div img:hover{
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+}
+
+.pantalla-click{
+  font-size: 50px;
+}
+
+.pantalla-click div h3,h4{
+  font-size: 40px;
+  font-weight: 600;
+  color: 	#B8860B;
+}
+
+iframe{
+  padding-top: 100px;
+}
+
+.partes{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.partes a{
+  font-size: 60px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #CC6699;
+}
+
+.parte-2 div{
+  width: 100%;
+  padding-top: 30px;
+
+}
+
+.foto-lugar{
+  display: none;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.foto-lugar img{
+  width: 800px;
+  height: 450px;
+  margin-left: 350px;
+  margin-top: 100px;
+}
+
+
+.foto-lugar:target {
+	display: block;
+	position: fixed;
+	background: #666633;
+	top: 0;
+	left: 0;
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+/*Estilos de la galeria*/
+.parte-2{
+  background-image: url("../assets/images/fondo.jpg");
+}
+
+.galeria {
+	width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 50px;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.galeria li {
+	margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.galeria img {
+	width: 150px;
+	height: 100px;
+}
+
+.galeria i{
+  font-size: 200px;
+  color: #A24BA2;
+}
+
+.galeria i:active{
+  font-size: 300px;
+  color: 	#F08080;
+}
+/*Estilos del modal*/
+
+.modal {
+	display: none;
+  margin-top: 90PX;;
+  padding-top: 200px;
+}
+
+.modal:target {
+
+	display: block;
+	position: fixed;
+	background: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.modal h3 {
+	color: #808000;
+	font-size: 30px;
+	text-align: center;
+	margin: 15px 0;
+}
+
+.imagen {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagen a {
+	color: #808000;
+	font-size: 80px;
+  font-weight: bold;
+	text-decoration: none;
+	margin: 0 50px;
+  margin-top: 100px;
+}
+
+.imagen a:nth-child(2) {
+	margin: 0;
+	height: 100%;
+	flex-shrink: 2;
+}
+
+.imagen img {
+	width: 800px;
+	height: 500px;
+	max-width: 100%;
+	border: 5px solid #CC3300;
+	box-sizing: border-box;
+}
+
+.cerrar {
+	display: block;
+	background: #808000;
+	width: 40px;
+	height: 40px;
+	margin: 180px auto;
+	text-align: center;
+	text-decoration: none;
+	font-size: 30px;
+	color: #000;
+	padding: 5px;
+	border-radius: 50%;
+	line-height: 25px;
+}
+
+
+footer{
+  width: 100%;
+  background-color: #556B2F;
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+.final{
+  position: relative;
+  display: block;
+  width: 500px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer div div h3{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.final p{
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+}
+/*iconos*/
+.final ul{
+  padding-left: 170px;
+  position: relative;
+  list-style: none;
+}
+
+.final ul li{
+  float: left;
+  display: table;
+
+  text-align: center;
+
+}
+
+.final ul li a{
+  justify-content: center;
+  text-align: center;
+  color: white;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding-top: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 30px;
+}
+
+.final p a{
+  text-decoration: none;
+  color: #18bc9c;
+}
+
+.final p a:hover{
+  text-decoration:underline;
+}
+
+footer p{
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+audio{
+  width: 100%;
+  background-color: #556B2F;
+}
